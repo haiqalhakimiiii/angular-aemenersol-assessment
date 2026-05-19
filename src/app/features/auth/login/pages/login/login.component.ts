@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { NonNullableFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  protected formLogin = this.formBuilder.group({
+    username: '',
+    password: ''
+  });
 
-  constructor() { }
+  constructor(private authService: AuthService,
+    private formBuilder: NonNullableFormBuilder
+  ) { }
 
-  ngOnInit(): void {
+  protected login(): void {
+    this.authService.login(this.formLogin.controls.username.value, this.formLogin.controls.password.value).subscribe();
   }
-
 }
