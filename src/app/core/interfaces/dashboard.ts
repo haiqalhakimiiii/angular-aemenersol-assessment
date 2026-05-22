@@ -11,7 +11,7 @@ export interface ChartDataApiResponse {
 }
 
 export interface TableDataApiResponse {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   username: string;
 }
