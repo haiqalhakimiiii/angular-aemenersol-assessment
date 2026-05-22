@@ -1,30 +1,30 @@
-<div class="dashboard-container">
-  <div class="charts-grid">
-    <div class="chart-wrapper">
-      <h2>Donut Chart</h2>
+<div class="px-5 py-6 max-w-6xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4 mt-0">Donut Chart</h2>
       <canvas id="donutChart"></canvas>
     </div>
-    <div class="chart-wrapper">
-      <h2>Bar Chart</h2>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4 mt-0">Bar Chart</h2>
       <canvas id="barChart"></canvas>
     </div>
   </div>
 
-  <div class="table-wrapper">
-    <h2>Users Table</h2>
-    <table class="users-table">
+  <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4 mt-0">Users Table</h2>
+    <table class="w-full border-collapse">
       <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+        <tr class="bg-gray-100">
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">First Name</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">Last Name</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">Username</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of tableUsers">
-          <td>{{ user.firstName }}</td>
-          <td>{{ user.lastName }}</td>
-          <td>{{ user.username }}</td>
+        <tr *ngFor="let user of tableUsers" class="hover:bg-gray-50 transition-colors">
+          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.firstName }}</td>
+          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.lastName }}</td>
+          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.username }}</td>
         </tr>
       </tbody>
     </table>
