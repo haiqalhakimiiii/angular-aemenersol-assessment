@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
@@ -15,8 +16,9 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
+    private apiService: ApiService,
     private formBuilder: NonNullableFormBuilder,
-    private apiService: ApiService
+    private router: Router
   )
     { }
 
@@ -26,13 +28,11 @@ export class LoginComponent implements OnInit {
   protected onSubmit(): void {
     const { email, password } = this.loginForm.getRawValue();
     this.apiService.login(email, password).subscribe({
-      next: (response) => {
-        console.log('Login successful:', response);
-        // Handle successful login, e.g., store token, navigate to dashboard, etc.
+      next: () => {
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.error('Login failed:', error);
-        // Handle login error, e.g., show error message to user
       }
     });
   }
