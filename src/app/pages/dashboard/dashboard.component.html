@@ -33,18 +33,18 @@
     <table class="w-full border-collapse">
       <thead>
         <tr class="bg-gray-100">
-          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">#</th>
-          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">First Name</th>
-          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">Last Name</th>
-          <th class="px-4 py-3 text-left font-semibold text-gray-800 border-b border-gray-300">User Name</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border border-gray-300">#</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border border-gray-300">First Name</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border border-gray-300">Last Name</th>
+          <th class="px-4 py-3 text-left font-semibold text-gray-800 border border-gray-300">User Name</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of tableUsers; let i = index" class="hover:bg-gray-50 transition-colors">
-          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ i + 1 }}</td>
-          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.firstName }}</td>
-          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.lastName }}</td>
-          <td class="px-4 py-3 text-gray-600 border-b border-gray-200">{{ user.username }}</td>
+          <td class="px-4 py-3 text-gray-600 border border-gray-200">{{ i + 1 }}</td>
+          <td class="px-4 py-3 text-gray-600 border border-gray-200">{{ user.firstName }}</td>
+          <td class="px-4 py-3 text-gray-600 border border-gray-200">{{ user.lastName }}</td>
+          <td class="px-4 py-3 text-gray-600 border border-gray-200">{{ user.username }}</td>
         </tr>
       </tbody>
     </table>
