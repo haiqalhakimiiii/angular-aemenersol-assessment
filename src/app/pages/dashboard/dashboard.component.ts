@@ -102,12 +102,8 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top'
+            display: false
           },
-          title: {
-            display: true,
-            text: 'Donut Chart'
-          }
         }
       }
     };
@@ -155,12 +151,8 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top'
+            display: false
           },
-          title: {
-            display: true,
-            text: 'Bar Chart'
-          }
         },
         scales: {
           y: {
