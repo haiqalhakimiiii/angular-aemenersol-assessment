@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   protected errorMessage = '';
 
   protected loginForm = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
 
     this.isLoading = true;
     this.errorMessage = '';
-    const { email, password } = this.loginForm.getRawValue();
-    this.apiService.login(email, password).subscribe({
+    const { username, password } = this.loginForm.getRawValue();
+    this.apiService.login(username, password).subscribe({
       next: () => {
         this.isLoading = false;
         this.router.navigate(['/dashboard']);
